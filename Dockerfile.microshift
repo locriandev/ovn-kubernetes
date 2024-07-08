@@ -25,6 +25,6 @@ FROM registry.ci.openshift.org/ocp/4.17:ovn-kubernetes-base
 USER root
 
 ENV PYTHONDONTWRITEBYTECODE yes
-
+LABEL "testing"
 COPY --from=builder /go/src/github.com/openshift/ovn-kubernetes/go-controller/_output/go/bin/ovnkube /usr/bin/
 COPY --from=builder /go/src/github.com/openshift/ovn-kubernetes/go-controller/_output/go/bin/ovn-k8s-cni-overlay /usr/libexec/cni/
